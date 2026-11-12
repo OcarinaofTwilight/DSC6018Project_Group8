@@ -4,8 +4,6 @@
 
 *English: [README.md](README.md)*
 
-SDSC 6018 期末项目 · 第 8 组 · Ke Liu, Zeyu Fu, Dong Wang, Kai Liu（香港城市大学 数据科学系）
-
 ---
 
 ## 结论速览
@@ -22,7 +20,7 @@ SDSC 6018 期末项目 · 第 8 组 · Ke Liu, Zeyu Fu, Dong Wang, Kai Liu（香
 
 一句话：**平衡损失既没买到敏感度，也没保住校准**；逆患病率 BCE 过度自信且结构性失准，focal 自信不足但一个温度可修。详见 `results/results.md` 与报告。
 
-## 这个仓库里有什么
+## 仓库内容
 
 | 有 | 说明 |
 |---|---|
@@ -41,7 +39,7 @@ SDSC 6018 期末项目 · 第 8 组 · Ke Liu, Zeyu Fu, Dong Wang, Kai Liu（香
 | 模型权重（每个 43–94 MB） | 可重训（约 45 分钟/次），且单个文件接近 GitHub 上限 |
 | 报告/幻灯片源文件 | 由 `tools/paper/` 生成，产物不随仓库发布 |
 
-## 5 分钟自检（不需要显卡、不需要数据）
+## 检查（不需要显卡或数据）
 
 ```bash
 pip install -r requirements.txt
@@ -51,9 +49,9 @@ python tests/test_kaggle_download.py # 下载器自检（本地起 HTTP 服务�
 
 最后一行应为 `all checks passed`。
 
-## 不算训练，原地重算所有表格与图（纯 CPU）
+## 如何复现所有表格与图（无GPU）
 
-这是组员「复测」最快的方式——`runs/` 里已经有逐图预测：
+`runs/` 里已经有逐图预测：
 
 ```bash
 python src/report.py --runs "runs/*" --out results/          # 主表 + 配对差值
@@ -127,7 +125,7 @@ tools/bench_local.py      本机吞吐基准
 tools/paper/              报告与幻灯片的生成脚本（build_report / build_slides / ...）
 ```
 
-## 设计要点（为什么这样写）
+## 设计要点
 
 | 决定 | 原因 |
 |---|---|
@@ -152,9 +150,6 @@ Python 3.10.8 · PyTorch 2.6.0+cu124 · timm 1.0.9 · 单卡 RTX 2060 Max-Q（6 
 单次划分、单个随机种子（区间只含抽样噪声，不含 run 间方差）；仅 256 px；无 Grad-CAM；
 有效样本数加权条件已实现但未训练（算力投给了元数据消融）。这些在报告的 §8 都写明了。
 
-## 上传到 GitHub
-
-仓库已经整理成可直接推送的形态（无 `.venv`、无数据、无权重、无凭据）。
 
 ```bash
 cd melanoma_calib_github
@@ -165,15 +160,6 @@ git commit -m "ISIC 2020 calibration-first benchmark: code, frozen split, predic
 git remote add origin git@github.com:<org>/<repo>.git
 git push -u origin main
 ```
-
-两点提醒：
-
-* **不要开 Git LFS**。`runs/**/*.pt` 已被 `.gitignore` 排除；权重（43–94 MB）建议放
-  Release 或网盘，不要进历史。
-* 若组员在 Windows 上克隆后跑 `scripts/*.ps1`，第一次需
-  `powershell -ExecutionPolicy Bypass -File scripts\setup.ps1` 建 venv。
-
-`docs/` 里放了由本仓库产出的两份报告 PDF（英文／中文），方便新加入的人先看结论再看代码。
 
 ## 引用与许可
 
