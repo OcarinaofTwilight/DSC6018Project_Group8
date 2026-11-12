@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite it as below."
+title: "melanoma_calib: a calibration-first, patient-disjoint benchmark on ISIC 2020"
+abstract: >-
+  Reference implementation for a study asking whether class-balanced objectives improve
+  sensitivity at a fixed false-positive budget, and what they cost in calibration, under a
+  frozen patient-disjoint split of the ISIC 2020 dermoscopy training set.
+authors:
+  - family-names: Liu
+    given-names: Ke
+  - family-names: Fu
+    given-names: Zeyu
+  - family-names: Wang
+    given-names: Dong
+  - family-names: Liu
+    given-names: Kai
+year: 2026
+version: 1.0.0
+type: software
+keywords:
+  - melanoma
+  - ISIC 2020
+  - class imbalance
+  - calibration
+  - decision curve analysis
+  - reproducibility

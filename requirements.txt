@@ -1,0 +1,23 @@
+# Python 3.10.8 on Windows, single RTX 2060 Max-Q (6 GB).
+# Install with CUDA wheels on Windows/Linux:
+#   pip install torch==2.6.0 torchvision==0.21.0 --index-url https://download.pytorch.org/whl/cu124
+#   pip install -r requirements.txt
+# CPU-only machines can stop after these two lines (everything except training runs).
+
+torch==2.6.0
+torchvision==0.21.0
+
+# timm 1.0.9 imports huggingface_hub.repo_type_and_id_from_hf_id, which hf_hub 2.x removed.
+# src/hf_compat.py restores it before `import timm`, so 0.2x and 2.x both work.
+timm==1.0.9
+huggingface_hub==2.4.0
+
+pandas==2.3.3
+numpy==2.2.6
+matplotlib==3.10.9
+Pillow==12.3.0
+
+# Only needed to rebuild the report/slides in tools/paper/:
+# python-docx==1.1.2
+# python-pptx==1.0.2
+# lxml>=5.0

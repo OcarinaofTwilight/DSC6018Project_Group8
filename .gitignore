@@ -1,0 +1,41 @@
+# ---- environment ------------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+.cache/
+
+# ---- data (1.4 GB, licensed per image on the ISIC Archive; fetch it yourself) ----
+data/
+data_synth/
+*.jpg
+*.jpeg
+*.png
+!figures/*.png
+!report_assets/*.png
+
+# ---- weights: 43-94 MB each, regenerable in ~45 min/run ---------------------
+runs/**/*.pt
+runs/**/*.ckpt
+*.pt
+*.ckpt
+
+# ---- credentials: never commit ---------------------------------------------
+secrets/
+.kaggle/
+kaggle.json
+access_token
+*.token
+
+# ---- editor / OS noise ------------------------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+~$*.docx
+~$*.pptx
+
+# NOTE: manifests/*.csv, runs/**/*_preds.csv, runs/**/*.json, results/ and figures/
+# are tracked on purpose — they are what makes every table reproducible without a GPU.
