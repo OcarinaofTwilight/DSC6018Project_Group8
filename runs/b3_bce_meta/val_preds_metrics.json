@@ -1,0 +1,43 @@
+{
+  "cfg": {
+    "manifest": "S:\\CityUStudy\\DSC6018_Project\\melanoma_calib\\manifests\\split_seed42.csv",
+    "img_dir": "S:\\CityUStudy\\DSC6018_Project\\data\\train_256",
+    "out_dir": "S:\\CityUStudy\\DSC6018_Project\\runs\\b3_bce_meta",
+    "model": "efficientnet_b3",
+    "loss": "bce",
+    "meta": true,
+    "img_size": 256,
+    "epochs": 12,
+    "batch_size": 16,
+    "lr": 0.0003,
+    "weight_decay": 0.0001,
+    "workers": 4,
+    "seed": 42,
+    "dropout": 0.3,
+    "sampler_power": 0.0,
+    "select_metric": "val_auprc",
+    "ext": ".jpg",
+    "limit_batches": 0,
+    "resume": false,
+    "no_amp": false,
+    "no_pretrained": false
+  },
+  "metrics": {
+    "n": 3313,
+    "n_pos": 58,
+    "prevalence": 0.017506791427709025,
+    "auroc": 0.8937920440701308,
+    "auprc": 0.2002569774312417,
+    "pauc_fpr20": 0.5974627893426558,
+    "brier": 0.015812453978613458,
+    "nll": 0.06653696049801583,
+    "ece_uniform15": 0.006961057803480754,
+    "ece_adaptive15": 0.007624671850500116,
+    "ece_pos": 0.8517453347002598,
+    "sens_at_spec80": 0.8103448275862069,
+    "spec_achieved": 0.8,
+    "threshold": 0.017210411466658124,
+    "cal_slope": 0.7949261019909128,
+    "cal_intercept": -0.6681207697689985
+  }
+}

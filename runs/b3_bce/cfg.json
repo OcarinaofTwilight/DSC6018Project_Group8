@@ -1,0 +1,23 @@
+{
+  "manifest": "S:\\CityUStudy\\DSC6018_Project\\melanoma_calib\\manifests\\split_seed42.csv",
+  "img_dir": "S:\\CityUStudy\\DSC6018_Project\\data\\train_256",
+  "out_dir": "S:\\CityUStudy\\DSC6018_Project\\runs\\b3_bce",
+  "model": "efficientnet_b3",
+  "loss": "bce",
+  "meta": false,
+  "img_size": 256,
+  "epochs": 12,
+  "batch_size": 16,
+  "lr": 0.0003,
+  "weight_decay": 0.0001,
+  "workers": 4,
+  "seed": 42,
+  "dropout": 0.3,
+  "sampler_power": 0.0,
+  "select_metric": "val_auprc",
+  "ext": ".jpg",
+  "limit_batches": 0,
+  "resume": false,
+  "no_amp": false,
+  "no_pretrained": false
+}

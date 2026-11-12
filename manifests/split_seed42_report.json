@@ -1,0 +1,36 @@
+{
+  "seed": 42,
+  "ratios": {
+    "train": 0.7,
+    "val": 0.1,
+    "test": 0.2
+  },
+  "sha256": "67983f6a943d7f129ef79c5e238898244875902aefd968ade3eabf257ecee906",
+  "summary": {
+    "train": {
+      "images": 23188,
+      "patients": 1437,
+      "melanomas": 409,
+      "prevalence": 0.0176
+    },
+    "val": {
+      "images": 3313,
+      "patients": 208,
+      "melanomas": 58,
+      "prevalence": 0.0175
+    },
+    "test": {
+      "images": 6625,
+      "patients": 411,
+      "melanomas": 117,
+      "prevalence": 0.0177
+    },
+    "duplicate_image_names": 0,
+    "prevalence_global": 0.0176,
+    "prevalence_rel_dev": {
+      "train": -0.0017,
+      "val": -0.0074,
+      "test": 0.004
+    }
+  }
+}

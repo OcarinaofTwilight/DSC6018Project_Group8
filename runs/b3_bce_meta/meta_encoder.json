@@ -1,0 +1,17 @@
+{
+  "age_median": 50.0,
+  "sex": [
+    "male",
+    "female",
+    "unknown"
+  ],
+  "site": [
+    "torso",
+    "lower extremity",
+    "upper extremity",
+    "head/neck",
+    "palms/soles",
+    "oral/genital",
+    "unknown"
+  ]
+}
